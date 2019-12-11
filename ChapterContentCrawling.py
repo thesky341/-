@@ -19,6 +19,13 @@ class ConCraw():
         s = re.compile(r"(<[\s\S]*?script&gt;)|(<[\s\S]*?>)|(一秒记住【笔趣阁小说网 www.bqg34.com】，精彩小说无弹窗免费阅读！)")  #通过正则表达式来把爬取的内容中不需要的成分去掉
         cont = content.prettify()
         cont = s.sub("", cont)
+        s = re.compile(r"\n\s*?\n")
+        cont = s.sub("\n", cont)
         cont = "    " + soup.find("h1").string + cont
+        # print(cont)
         book.write(cont)
-        
+
+
+if __name__ == "__main__":
+    cc = ConCraw("https://www.bqg34.com/book_89092/30245259.html")
+    # cc.crawling(1)

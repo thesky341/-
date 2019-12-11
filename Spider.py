@@ -2,10 +2,6 @@
 
 import urllib.request
 from bs4 import BeautifulSoup
-import Directory
-import gzip
-import Spider
-import ChapterContentCrawling as ccc
 
 
 class Spi():
